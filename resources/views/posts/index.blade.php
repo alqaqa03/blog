@@ -1,6 +1,11 @@
-@extends('layouts.app')
-@section('title')Posts @endsection
-@section('content')
+<x-app-layout>
+
+
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
 
       <div class="text-center">
         <a href="{{ route('posts.creat') }}" class="btn btn-success">Creat Post</a>
@@ -36,9 +41,9 @@
           @endforeach
         </tbody>
       </table>
-    @endsection('content')
     <script>
       function confirmSubmit() {
   return confirm("هل أنت متأكد من إرسال النموذج؟");
 }
     </script>
+</x-app-layout>
